@@ -1,0 +1,250 @@
+<!-- 
+<div class="greet">
+    <h4>Welcome</h4>
+    <p>Welcome!We welcome you with deep of our heart!</p>
+</div> -->
+
+<div class="main">
+
+    <div class="head">
+        <div class="icon-wrapper">
+            <img  id="img" src="https://cdn-icons-png.flaticon.com/128/2498/2498074.png" height="40px" width="40px"><h3>SEND SMS!</h3>   
+        </div>
+    </div>
+
+    <form [formGroup]="smsform">
+        <div class="component1">
+
+            <label id="lbl" for="cars">Sender ID:</label>
+            <br>
+            <br>
+
+            <select formControlName="sender" name="cars" id="cars">
+                <option value="" disabled selected>--Select--</option>
+                <option value="NUEVAS">NUEVAS</option>
+                <option value="TRKZIA">TRKZIA</option>
+            </select>
+
+            <br>
+            <br>
+
+            <label id="lbl" for="cars">Template:</label>
+
+            <br>
+            <br>
+
+            <select formControlName="templateid" (change)="onchange($event)" name="cars" id="cars">
+                <option value="" disabled selected>--Select--</option>
+                <option value="1707161891201501738">Your My SMS verification Code id . Do not share this code with others Team Nuevas</option>
+                <option value="1707161855199873979">Dear User your OTP is  Kindly use OTP to validate your Registration. Team Trackzia</option>
+                <option value="1707161899992775140">Dear  , Your Complaint with Complaint Id:  has Been Resolve Kindly Share OTP, The OTP is  \n From Nuevas</option>
+            </select>
+
+            <br>
+            <br>
+            <label id="lbl">Mobile No:</label>
+
+            <br>
+            <br>
+
+           <!-- <textarea [(ngModel)]="textInput"  
+           (keydown.enter)="mobileNoCount()" formControlName="mob"  
+           id="number" name="w3review" rows="6" placeholder="You Can Send Upto 50,000 Messages At a Time!" cols="50"
+            [(ngModel)]="textBoxValue">  {{ phoneNumbers.join('\n') }}</textarea>  -->
+            <textarea [(ngModel)]="textBoxValue"(keydown.enter)="mobileNoCount()" formControlName="mob"  id="number" name="w3review" 
+                    rows="6" 
+                       cols="50" 
+                          placeholder="You Can Send Up to 50,000 Messages At a Time!" [(ngModel)]="selectedPhoneNumbers">
+                           
+            </textarea>
+            <br>
+            <p id="p"><strong>Valid Number's!: {{ validMobCount }}</strong></p>
+            <p id="i"><strong>Invalid Numbers!: {{ invalidMobCount }}</strong></p> 
+       
+            <button id="clearbtn" (click)="clearTextBox()">Clear</button>
+
+            <br>
+
+            <div class="display">
+                <p><strong>Info! </strong>One variable=30 characters only.Enter the number of characters Accordingly!</p>
+            </div>
+
+            <br>
+            <br>
+
+            <label id="lbl">Message:</label>
+            <input id="ContentPlaceHolder1_chkUnicode" type="checkbox" name="ctl00$ContentPlaceHolder1$chkUnicode">
+            <label for="ContentPlaceHolder1_chkUnicode">Unicode (Hindi, Marathi SMS)</label>
+
+            <br>
+            <br>
+
+            <textarea  formControlName="msg" id="msg" name="w3review" (mouseover)="onMouseOver()" rows="6"   placeholder="You Can Send Upto 50,000 Messages At a Time!" cols="50"></textarea>
+            <p id="char"><strong>Count: {{ textlength }}    Text: {{ limit }}</strong></p> <p id="credit"><strong>Credits Count: {{ creditsCount }}</strong></p>
+            <!-- <p>Total Credits: {{ creditcount }}</p> -->
+
+            <br>
+            <br>
+            <br>
+            <br>
+
+              <div class="schedule">
+                 <div class="schedule-container">
+                         <div class="schedule-checkbox">
+                            <input type="checkbox" id="showSchedule" name="showSchedule" [(ngModel)]="showSchedule" (change)="toggleSchedule()">
+                            <label for="showSchedule" style="color: #555555;font-family: sans-serif; font-weight: bold;">Schedule</label>
+                         </div>
+                        <br>
+                         <div class="schedule-fields" *ngIf="showSchedule">
+                            <div class="schedule-field">
+                                <label for="startDatePicker"  style="color: #555555;font-family: sans-serif; font-weight: bold;">Start Date:</label>
+                                <input type="date" id="startDatePicker" name="startDatePicker" [(ngModel)]="selectedDate" (click)="openDatePicker()" style=" border:1px solid #999;">
+                            </div>
+                            <div class="schedule-field">
+                                <label for="startTimePicker"  style="color: #555555;font-family: sans-serif; font-weight: bold;">Start Time:</label>
+                                <input type="time" id="startTimePicker" name="startTimePicker" [(ngModel)]="selectedTime" (click)="openTimePicker()" >
+                            </div>
+                            <button class="btnconfirm1">Confirm</button> 
+                        </div>
+                      </div>
+                    <!-- <button    class="btnconfirm">Confirm</button>  -->
+             </div> 
+                    <br>
+                    <br>
+                    
+            <button (click)="submit()" class="btn">SEND SMS</button> 
+        </div>
+    </form>
+</div>
+
+<!-- options -->
+<div class="option">
+    <div class="card text-center">
+        <div style="background-color: #d9edf7;" class="card-header">
+            <ul class="nav nav-tabs card-header-tabs" id="myTab">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active" data-bs-toggle="tab">Groups</a>
+                </li>
+                <li class="nav-item">
+                  
+                    <a href="#profile" class="nav-link" data-bs-toggle="tab">Choose File(.xls, .txt)</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="card-body">
+            <div class="content tab-content">
+                    <div class="tab-pane fade show active" id="home">
+                     <label id="slctall" for="selectAll">Select All</label>
+                     <input id="selectAll" type="checkbox" [(ngModel)]="selectAllCheckbox" (change)="selectAllChanged()">
+                     
+                     <label id="grpidp"for="grpid1">pool</label>
+                     <input id="grpidp1" type="checkbox" [(ngModel)]="checkbox1" (change)="checkboxChanged()">
+                     
+                     <label id="grpidt" for="grpidt1">test</label>
+                     <input id="grpidt1" type="checkbox" [(ngModel)]="checkbox2" (change)="checkboxChanged()">
+                 </div>
+               
+                <div class="tab-pane fade" id="profile">
+                    
+                    <input  style="width:230px;margin-top: 10px;position: relative;left:16px" accept=".xls,.txt,.csv" type="file" (change)="onFileSelected($event)">
+
+                    <button style="border:none;margin-top: 20px;padding: 5px;background-color: #5dbea3; font-weight: 500;font-family: sans-serif; color: whitesmoke;
+                    color: whitesmoke;"  (click)="importContacts()" 
+                    >Import Contacts
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- chatbot -->
+<div class="chatbot">
+    <!-- <h3>SELECT CHATBOT!</h3> 
+    <img src="https://cdn-icons-png.flaticon.com/128/2814/2814666.png" id="botimg" height="50px" width="50px" style="margin-top: 8px;"><br>
+<select id="botselect">
+    <option selected="">--Select--</option>
+    <option value=" ">#</option>
+    <option value=" ">#</option>
+    <option value=" ">#</option>
+</select> -->
+<div class="card">
+    <div style="background-color:#d9edf7; color: black;font-weight: 400;" class="card-header">
+      <h6 style="font-family: sans-serif; font-size: 18px;color: #555555;">SELECT CHATBOX</h6>
+    </div>
+    <div class="card-body">
+        <select id="botdrp">
+            <option value="selected">--Select-- </option>
+    
+        </select>
+    </div>
+  </div>
+</div>
+<!-- 
+media -->
+<!-- <div class="media">
+    <div class="card text-center">
+        <div  style="background-color: #d9edf7;" class="card-header">
+            <ul class="nav nav-tabs card-header-tabs" id="myTab">
+                <li class="nav-item">
+                    <a href="#image" class="nav-link active" data-bs-toggle="tab">IMAGE</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#video" class="nav-link" data-bs-toggle="tab">VIDEO</a>
+                </li> 
+            </ul>
+        </div>
+        <div class="card-body">
+            <div class="tab-content"
+                <div class="tab-pane fade show active" id="image">
+                    <input id="upldimg" style="width:230px;margin-top: 10px;" accept=".jpg,.png,.pdf" type="file"  >
+                </div>
+                <div class="tab-pane fade" id="video">
+                    <input id="upldimg" style="width:230px;margin-top: 10px;" accept=".mp4" type="file"  >
+                </div>
+            </div>
+        </div>
+</div> -->
+
+<div class="media">
+    <div class="card text-center">
+      <div style="background-color: #d9edf7;" class="card-header">
+        <ul class="nav nav-tabs card-header-tabs" id="myTab">
+          <li class="nav-item">
+            <a href="#image" class="nav-link active" data-bs-toggle="tab">IMAGE</a>
+          </li>
+          <li class="nav-item">
+            <a href="#video" class="nav-link" data-bs-toggle="tab">VIDEO</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-body">
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="image">
+            <!-- <input id="upldimg" style="width:230px;margin-top: -5px;" accept=".jpg,.png,.pdf" type="file" (change)="onFileUploaded($event, 'image')">
+            <img *ngIf="imageSrc" [src]="imageSrc" alt="Uploaded Image" style="max-width: 100%; max-height: 100px;"> -->
+            <select id="botdrp">
+                <option value="selected">--Select-- </option>
+                <option value="selected">image 1 </option>
+                <option value="selected">image 2</option>
+        
+            </select>
+          </div>
+          <div class="tab-pane fade" id="video">
+            <input id="upldvideo" style="width:230px;margin-top: -5px;" accept=".mp4" type="file" (change)="onFileUploaded($event, 'video')">
+            <video *ngIf="videoSrc" controls style="max-width: 100%; max-height: 100px;">
+              <source [src]="videoSrc" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+<router-outlet></router-outlet>

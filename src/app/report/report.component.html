@@ -1,0 +1,139 @@
+<!-- <div style="margin-left: 250px; position: relative;bottom:1000px;width: 900px;" class="main">
+    <div class="table-wrapper">
+      
+      <table class="fl-table">
+        <thead >
+          <tr>
+            <th>id</th>
+            <th>Success</th>
+            <th>ErrorCode</th>
+            <th>Message</th>
+            <th>MobileNo</th>
+            <th>Status</th>
+            
+          </tr>
+        </thead>
+    <tbody>
+      
+          <tr  *ngFor="let item of report" >
+            
+            <td>{{item.id}}</td>
+            <td>{{item.Success}}</td>
+            <td>{{item.ErrorCode}}</td>
+            <td>{{item.Message}}</td>
+            <td>{{item.MobileNo}}</td>
+            <td>{{item.Status}}</td>
+          
+           
+           
+           
+          </tr>
+        </tbody>
+     
+    
+    
+      </table>
+    </div>  
+  </div> -->
+
+
+
+<!-- 
+  <div style="margin-left: 250px; position: relative;bottom:980px;width: 900px;" class="main">
+    <div class="table-wrapper">
+      <table class="fl-table">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Success</th>
+         
+            <th>ErrorCode</th>
+            <th>Message</th>
+            <th>MobileNo</th>
+            <th>Status</th>
+            <th>Date and Time</th>
+          </tr>
+        </thead> 
+        <tbody>
+          <tr *ngFor="let item of report">
+            <td>{{item.id}}</td>
+            <td>{{item.Success}}</td>
+            <td>{{item.ErrorCode}}</td>
+            <td>{{item.Message}}</td>
+            <td>{{item.MobileNo}}</td>
+            <td>{{item.Status}}</td>
+            <th>{{item.datetime}}</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>  
+  </div>
+  <button class="reportdownld" (click)="downloadExcel()">Download Report</button>
+  
+  
+   -->
+
+   <div class="dashboard" *ngIf="!isContainer2Visible">
+
+    <h2>REPORT</h2> 
+    <br />
+    <!-- <img src="../../assets/download-icon.png" (click)="downloadExcel()"> -->
+    
+
+    <table class="custom-table">
+        <thead>
+            <tr>
+                <th>Sr.No</th>
+                <th>DateTime</th>
+                <th>Message</th>
+                <th>MobileNo</th>
+                <th>Credits</th>
+                <th>View</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of report; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ item.datetime}}</td>
+                <td>{{ item.Message }}</td>
+                <td>{{ item.Valid}}</td>
+                <td>{{ item.Credit}}</td>
+                <td><i class="fas fa-eye" (click)="toggleVisibility(i)"></i></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<div class="dashboard2" *ngIf="selectedItemIndex !== null && isContainer2Visible" [ngClass]="{'container2': isContainer2Visible,'d-none':!isContainer2Visible}">
+
+  <h2>REPORT DETAILS</h2>
+  <button class="reportdownld" (click)="downloadExcelReport()">Download Report</button>
+  <br />
+  <!-- <button (click)="toggleVisibility(null)" style="background-color: rgb(228, 231, 252);">Back</button> -->
+ 
+ 
+  
+
+  <table class="custom-table">
+      <thead>
+          <tr>
+              <th>DateTime</th>
+              <th>MobileNo</th>
+              <th>SenderID</th>
+              <th>Status</th>
+          </tr>
+      </thead>
+
+      <tbody>
+          <tr>
+              <td>{{report[selectedItemIndex].datetime}}</td>
+              <td>{{report[selectedItemIndex].MobileNo}}</td>
+              
+              <td>{{report[selectedItemIndex].Sender }}</td>
+              <td>{{report[selectedItemIndex].Status}}</td>
+          </tr>
+          <button id="backbtn">Back</button>
+      </tbody>
+  </table>
+</div>

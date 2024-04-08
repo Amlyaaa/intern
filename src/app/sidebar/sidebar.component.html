@@ -1,0 +1,188 @@
+<!-- <p>sidebar works!</p>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+ <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+   </head>
+   <body>
+     <input type="checkbox" id="check">
+     <label for="check">
+       <i class="fas fa-bars" id="btn"></i>
+       <i class="fas fa-times" id="cancel"></i>
+     </label>
+     <div class="sidebar">
+       <header>Menu</header>
+       <a href="#" class="active">
+         <i class="fas fa-qrcode"></i>
+         <span>Dashboard</span>
+       </a>
+       <a href="#">
+         <i class="fas fa-link"></i>
+         <span>Shortcuts</span>
+       </a>
+       <a href="#">
+         <i class="fas fa-stream"></i>
+         <span>Overview</span>
+       </a>
+       <a href="#">
+          <i class="fas fa-calendar"></i>
+         <span>Events</span>
+       </a>
+       <a href="#">
+         <i class="far fa-question-circle"></i>
+         <span>About</span>
+       </a>
+       <a href="#">
+         <i class="fas fa-sliders-h"></i>
+         <span>Services</span>
+       </a>
+       <a href="#">
+         <i class="far fa-envelope"></i>
+         <span>Contact</span>
+       </a>
+     </div>
+ </body>
+     
+   <div class="frame">
+ <p> Responsive </p>
+ <h2>SIDE BAR</h2>
+   <p>in Pure CSS</p>
+ 
+ </div>   -->
+     
+ 
+
+
+
+ <!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Drop Down Sidebar Menu | CodingLab </title>-->
+     
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar close">
+     
+    <ul class="nav-links">
+      <li>
+        <a routerLink="../dashboard">
+          <i  class='bx bx-grid-alt' ></i>
+          <span class="link_name">Dashboard</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name"><img src="https://cdn-icons-png.flaticon.com/128/10397/10397171.png" height="18px" width="18px" style="margin-right: 2px;" />Dashboard!</a></li>
+        </ul>
+      </li>
+      <li>
+        <div  class="iocn-link">
+          <a routerLink="../sms">
+            <i class='bx bx-collection' ></i>
+            <span class="link_name"></span>
+
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#"><img src="https://cdn-icons-png.flaticon.com/128/2704/2704167.png" height="19px" width="19px" style="margin-right: 2px;" />MySms!</a></li> 
+        </ul>
+
+      </li>
+      <li>
+
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-book-alt' ></i>
+            <span class="link_name">Media</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#"><img src="https://cdn-icons-png.flaticon.com/128/3471/3471653.png" height="18px" width="18px" style="margin-right: 2px;" />Quick Message!</a></li>
+          <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/13670/13670447.png" height="16px" width="16px" style="margin-right: 2px;" />Whatsapp!</a></li>
+          <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/5585/5585856.png" height="16px" width="16px" style="margin-right: 2px;" />VoiceCall!</a></li>
+          <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/128/2190/2190552.png" height="16px" width="16px" style="margin-right: 2px;" />Advance Message!</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-pie-chart-alt-2' ></i>
+          <span class="link_name">Analytics</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#"><img src="https://cdn-icons-png.flaticon.com/128/1465/1465898.png" height="16px" width="16px" style="margin-right: 2px;" />Analytics</a></li>
+        </ul>
+      </li>
+      <li>
+        <a routerLink="report">
+          <i class='bx bx-line-chart' ></i>
+          <span class="link_name">Reports!</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#"><img src="https://cdn-icons-png.flaticon.com/128/610/610128.png" height="16px" width="16px" style="margin-right: 2px;" />Reports!</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-plug' ></i>
+            <span class="link_name">Plugins</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Plugins</a></li>
+          <li><a href="#">UI Face</a></li>
+          <li><a href="#">Pigments</a></li>
+          <li><a href="#">Box Icons</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-compass' ></i>
+          <span class="link_name">Explore</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#"><img src="https://cdn-icons-png.flaticon.com/128/15181/15181844.png" height="16px" width="16px" style="margin-right: 2px;" />Explore</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-history'></i>
+          <span class="link_name">History</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#"><img src="https://cdn-icons-png.flaticon.com/128/2972/2972431.png" height="16px" width="16px" style="margin-right: 2px;" />History</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Setting</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#"><img src="https://cdn-icons-png.flaticon.com/128/738/738853.png" height="16px" width="16px" style="margin-right: 2px;" />Setting</a></li>
+        </ul>
+      </li>
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <!--<img src="image/profile.jpg" alt="profileImg">-->
+      </div>
+      <div class="name-job">
+        <div class="profile_name">Prem Shahi</div>
+        <div class="job">Web Desginer</div>
+      </div>
+      <i class='bx bx-log-out' ></i>
+    </div>
+  </li>
+</ul>
+  </div>
+ 
+   
+</body>
+</html>

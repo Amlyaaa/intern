@@ -1,0 +1,105 @@
+/* 
+
+/* Style for the main container */
+.dashboard {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  width:80%;
+  margin-left:180px;
+ position: relative;
+ bottom:1040px
+}
+
+/* Style for the report heading */
+.dashboard h2 {
+  color: #333;
+}
+
+/* Style for the download icon */
+.dashboard img {
+  cursor: pointer;
+}
+
+/* Style for the custom table */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+/* Style for table headers */
+.custom-table th {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Style for table rows */
+.custom-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+/* Style for the eye icon */
+.custom-table .fas.fa-eye {
+  color: blue;
+  cursor: pointer;
+}
+
+/* Style for the second container */
+.dashboard2 {
+  margin-left: 180px;
+  width:80%;
+ position: relative;
+ bottom:1000px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+/* Style for the report details heading */
+.dashboard2 h2 {
+  color: #333;
+}
+
+/* Style for the custom table in the second container */
+.dashboard2 .custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+/* Style for table headers in the second container */
+.dashboard2 .custom-table th {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Style for table rows in the second container */
+.dashboard2 .custom-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.reportdownld{
+  margin-left: 890px;
+  background-color: #5dbea3;
+  color: white;
+  border: none;
+  padding: 7px;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-weight: 600;
+  border-radius: 4px;
+}
+#backbtn{
+  position: relative;
+  bottom:400px;
+  left:1170px;
+  width:90px;
+}
